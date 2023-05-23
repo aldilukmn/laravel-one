@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::resource('products', ProductController::class);
 // Route::resource('products', ProductController::class);
 // Route::resource('about', ProductController::class);
+
+Route::get('/about', [ProductController::class, 'about']);

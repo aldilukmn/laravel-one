@@ -26,3 +26,17 @@ const deleteConfirm = (e) => {
         }
       })
 }
+
+$(document).ready(function() {
+  $('#name, #price, #image, #category').on('input change', function() {
+    const name = $('#name').val().trim();
+    const price = $('#price').val().trim();
+    const image = $('#image').val().trim();
+    const category = $('#category').val();
+    if (name !== '' && price !== '' && image !== '' && category !== null) {
+      $('#save').prop('disabled', false);
+    } else {
+      $('#save').prop('disabled', true);
+    }
+  });
+});

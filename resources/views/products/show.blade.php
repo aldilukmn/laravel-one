@@ -33,7 +33,7 @@
                     <input type="hidden" name="hidden_image" value="{{ $product->image }}">
                 </div>
                 <select class="form-select mb-3" name="category">
-                    <option selected>Open this select menu</option>
+                    <option selected disabled>Open this select menu</option>
                     @foreach ($category as $optionKey => $optionValue)
                         <option value="{{ $optionKey }}" {{ (isset($product->category) && ($product->category == $optionKey) ? 'selected' : '' ) }}>{{ $optionValue }}</option>
                     @endforeach

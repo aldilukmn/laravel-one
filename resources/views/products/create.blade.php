@@ -20,31 +20,30 @@
                     @endif
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" name="name"
+                    <input type="text" class="form-control" placeholder="Enter Name" name="name" id="name"
                         value="{{ old('name') }}">
                 </div>
                 <div class="mb-3">
-                    <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Price"
-                        name="price">
+                    <input type="number" class="form-control" placeholder="Enter Price" name="price" id="price" value="{{ old('price') }}">
                 </div>
                 <div class="mb-3">
                     <img src="" alt="img-product" class="mb-3 img-thumbnail" style="width: 200px;"
                         id="file-preview">
-                    <input type="file" class="form-control" name="image" accept="image/*" onchange="showFile(event)">
-                    <label for="image"></label>
+                    <input type="file" class="form-control" name="image" accept="image/*" onchange="showFile(event)" id="image">
                 </div>
-                <select class="form-select mb-3" name="category">
-                    <option selected>Open this select menu</option>
+                <select class="form-select mb-3" name="category" id="category">
+                    <option selected disabled>Open this select menu</option>
                     @foreach ($category as $optionKey => $optionValue)
                         <option value="{{ $optionKey }}">{{ $optionValue }}</option>
                     @endforeach
                 </select>
                 <div class="mb-3">
-                    <button class="btn btn-primary w-100">Save</button>
+                    <button type="submit" class="btn btn-primary w-100" id="save" disabled>Save</button>
                 </div>
             </form>
             <div>
-                <button class="btn btn-danger w-100" onclick="window.location='{{ route('products.index') }}'">Cancel</button>
+                <button class="btn btn-danger w-100"
+                    onclick="window.location='{{ route('products.index') }}'">Cancel</button>
             </div>
         </div>
     </div>
